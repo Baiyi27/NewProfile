@@ -10,15 +10,24 @@ set(projectName driSharedObject)
 get_filename_component(DRV_NAME "${CMAKE_CURRENT_SOURCE_DIR}" NAME)
 
 # Collect C or CPP files in the current directory
-file(GLOB SOURCE_FILES ./*.c*)
-#message(STATUS "cfile: ${SOURCE_FILES}" )
+file(GLOB sourceFile *.c*)
+#message(STATUS "cfile: ${sourceFile}")
 
 # Find files starting with 'kplc'
-file(GLOB KPLC_FILES ./kplc*)
-#message(STATUS "kplcfile: ${KPLC_FILES}" )
+file(GLOB KPLC_FILES kplc*)
+#message(STATUS "kplcfile: ${KPLC_FILES}")
+
+#set RELATIVE_PATH
+foreach(singleFile ${sourceFile})
+    #message(for ::::${singleFile})
+    file(RELATIVE_PATH  relativeFiles  ${CMAKE_CURRENT_SOURCE_DIR} ${singleFile})
+    list(APPEND objFiles ${relativeFiles})
+endforeach()
 
 # Add the source files to be compiled
-add_library(${projectName} SHARED ${SOURCE_FILES})
+add_library(${projectName} SHARED ${objFiles})
+
+#add_library(${projectName} SHARED ${sourceFile})
 
 # Set compilation options
 if(WIN32)
@@ -73,4 +82,4 @@ else()
     endif()
 endif()
 
-
+# Determine if the lib directory exists and delete the. a file in it
