@@ -18,4 +18,4 @@ deb-src http://mirrors.ustc.edu.cn/debian/ bullseye-updates main
 # entries were disabled at the end of the installation process.
 # For information about how to configure apt package sources,
 # see the sources.list(5) manual.
-deb http://ftp.de.debian.org/debian bookworm main
+deb http://ftp.cn.debian.org/debian bookworm main
