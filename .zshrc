@@ -176,9 +176,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi/bin
 export PATH=$PATH:/usr/local/arm/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf/bin
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+export CLANG_FORMAT_STYLE="$HOME"
+
+#export ZSH="$HOME/.oh-my-zsh"
+
+#To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-	#注意中间不要有空格否则无效
+#注意中间不要有空格否则无效
 alias clc='clear'
 alias cls='printf "\033c"'
 alias tl='tree'
