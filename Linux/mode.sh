@@ -4,7 +4,7 @@
 confirm_restart() {
   read -p "Do you want to restart the system? (y/n): " restart
   if [[ $restart == "y" || $restart == "yes" ]]; then
-    reboot
+      init 6 
   else
     echo "Restart canceled."
   fi

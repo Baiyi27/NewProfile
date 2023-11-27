@@ -4,10 +4,10 @@
 mainDir="/mnt/hgfs/"
 
 # 文件夹列表
-folders=("DebugDtools" "Dtools" "Pro" "VMshare")
+folders=("DebugDtools" "Dtools" "Pro" "VMshare" "PlcDriver")
 
 # 软链接名列表
-#symlinks=("DebugDtoolslib.lnk" "Dtoolslib.lnk" "Prolib.lnk" "VMshare.lnk")
+#symlinks=("DebugDtools" "Dtools" "Pro" "VMshare" "PlcLib")
 
 # 遍历文件夹列表
 
