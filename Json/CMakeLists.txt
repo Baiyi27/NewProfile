@@ -1,5 +1,5 @@
 #/*-------Date:2023/05/26/21:04-------*/
-#/*--- UpDate:2023/11/24/14:07 ---*/
+#/*--- UpDate:2023/11/28/10:54 ---*/
 cmake_minimum_required(VERSION 3.25)
 
 set(CMAKE_C_STANDARD 11)
@@ -8,17 +8,18 @@ set(CMAKE_CXX_STANDARD 14)
 set(CommonFlags "-Os -Wall -Wextra")
 # set(CMAKE_C_FLAGS "${CommonFlags} -Werror=implicit-function-declaration")
 
-set(Debug TRUE)
+# set(Debug TRUE)
+set(Debug FALSE)
 
-if(Debug AND LINUX)
-
+if(Debug)
     set(WonUnused " -Wno-unused-variable -Wno-unused-but-set-variable")
     string(APPEND CommonFlags ${WonUnused})
-    # message(!!!${CommonFlags})
-elseif(Debug AND WIN32)
 
-    string(APPEND CommonFlags " -Wno-unused-variable")
-    # message(%%${CommonFlags})
+    # message(!!!${CommonFlags})
+# elseif(Debug AND WIN32)
+
+#     string(APPEND CommonFlags " -Wno-unused-variable -Wno-unused-but-set-variable")
+#     # message(%%${CommonFlags})
     
 endif()
 
@@ -45,7 +46,7 @@ add_library(${projectName} SHARED ${objFiles})
 set(CMAKE_C_FLAGS "${CommonFlags} -Werror=implicit-function-declaration")
 set(CMAKE_CXX_FLAGS "${CommonFlags}")
 
-message(${CMAKE_C_FLAGS})
+# message(${CMAKE_C_FLAGS})
 #add_library(${projectName} STATIC ${sourceFiles})
 
 if(WIN32)
@@ -63,12 +64,12 @@ endif()
 target_link_libraries(${projectName} PRIVATE ${libraries})
 
 # Get the current directory name
-get_filename_component(DRV_NAME ${PROJECT_SOURCE_DIR} NAME)
+get_filename_component(driverName ${PROJECT_SOURCE_DIR} NAME)
 
 # Set the output Shared Object file name
 set_target_properties(${projectName} PROPERTIES
     PREFIX ""
-    OUTPUT_NAME "${DRV_NAME}"
+    OUTPUT_NAME "${driverName}"
 )
 
 install(TARGETS ${projectName} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/lib)
@@ -76,26 +77,26 @@ install(TARGETS ${projectName} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 # Determine the installation path in the operating system environment
 if(WIN32)
     if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/kplc*") # Find files starting with 'kplc'
-        set(TARGET_PATHS "D:/Test/bin/lib/plc")
+        set(targetPaths "D:/Test/bin/lib/plc")
     else()
-        set(TARGET_PATHS "D:/Kinco/Kinco DTools V4.2.0/lib/plc" "D:/Kinco/Kinco_debug/lib/plc")
+        set(targetPaths "D:/Kinco/Kinco DTools V4.2.0/lib/plc" "D:/Kinco/Kinco_debug/lib/plc")
     endif()
 else()
     if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/kplc*")
-        set(TARGET_PATHS "/home/lyj/Prolib.lnk/")
+        set(targetPaths "/home/lyj/Prolib.lnk/")
     else()
-        set(TARGET_PATHS "/home/lyj/Dtoolslib.lnk/" "/home/lyj/DebugDtoolslib.lnk/")
+        set(targetPaths "/home/lyj/Dtoolslib.lnk/" "/home/lyj/DebugDtoolslib.lnk/")
     endif()
 endif()
 
 #Update`Ge` files
-file(GLOB geFile ${PROJECT_SOURCE_DIR}/lib/${DRV_NAME}.ge)
+file(GLOB geFile ${PROJECT_SOURCE_DIR}/lib/${driverName}.ge)
 # message(!!!!!!!!!!!${geFile})
-# message(***********${TARGET_PATHS})
+# message(***********${targetPaths})
 
 # Install the library file and ge files to the target paths
-foreach(TARGET_PATH ${TARGET_PATHS})
-    install(FILES "$<TARGET_FILE:${projectName}>" DESTINATION ${TARGET_PATH})
-    install(FILES ${geFile} DESTINATION ${TARGET_PATH})
+foreach(targetPath ${targetPaths})
+    install(FILES "$<TARGET_FILE:${projectName}>" DESTINATION ${targetPath})
+    install(FILES ${geFile} DESTINATION ${targetPath})
 endforeach()
-#upDate:2023/11/14/14:11 
+
