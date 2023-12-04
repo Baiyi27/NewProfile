@@ -1,0 +1,2 @@
+@echo off
+start ./b2 --with-system --with-coroutine --with-python --with-thread --with-date_time --with-regex --with-serialization toolset=gcc variant=release link=shared threading=multi stage && start ./b2 --with-system --with-coroutine --with-python --with-thread --with-date_time --with-regex --with-serialization toolset=gcc variant=debug link=sharefd threading=multi stage
