@@ -1,2 +1,8 @@
 @echo off
-start ./b2 --with-system --with-coroutine --with-python --with-thread --with-date_time --with-regex --with-serialization toolset=gcc variant=release link=shared threading=multi stage && start ./b2 --with-system --with-coroutine --with-python --with-thread --with-date_time --with-regex --with-serialization toolset=gcc variant=debug link=sharefd threading=multi stage
+set linkSts=static
+set runtimeSts=static
+set libDir="./myBuild/mingw64-lnk_%linkSts%-rt_%runtimeSts%"
+::@echo %libDir% 
+::@pause --build-dir=build
+
+.\b2 --prefix=%libDir% --stagedir=%libDir% --with-system --with-coroutine --with-python --with-thread --with-date_time --with-regex --with-serialization address-model=64 toolset=gcc link=%linkSts% runtime-link=%runtimeSts% stage
