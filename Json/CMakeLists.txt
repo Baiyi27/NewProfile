@@ -5,14 +5,14 @@ cmake_minimum_required(VERSION 3.25)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 14)
 
-set(CommonFlags "-Os -Wall -Wextra")
+set(CommonFlags "-Os -Wall ")
 # set(CMAKE_C_FLAGS "${CommonFlags} -Werror=implicit-function-declaration")
 
 # set(Debug TRUE)
 set(Debug FALSE)
 
 if(Debug)
-    set(WonUnused " -Wno-unused-variable -Wno-unused-but-set-variable")
+    set(WonUnused " -Wextra -Wno-unused-variable -Wno-unused-but-set-variable")
     string(APPEND CommonFlags ${WonUnused})
 
     # message(!!!${CommonFlags})
@@ -23,31 +23,34 @@ if(Debug)
     
 endif()
 
-project(MyDriSO)
 # set obj name
-set(projectName dirSharedObject)
+project(DynamicLibrary)
 
 set(libraries pthread)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(
+    ${PROJECT_NAME} PUBLIC  
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>  
+    $<INSTALL_INTERFACE:include>  
+)
 #message(!!!!!${CMAKE_CURRENT_SOURCE_DIR}/include)
-
 
 # Specifies the path of the dynamic library to be linked
 #link_directories(${PROJECT_SOURCE_DIR}/bin)
 
 # Collect C or CPP files in the current directory
-file(GLOB objFiles ${CMAKE_CURRENT_SOURCE_DIR}/src/*.c*)
+file(GLOB_RECURSE objFiles src/*.c*)
+file(GLOB_RECURSE objHeaders include/*.h)
 #message(file: ${sourceFiles})
 
 # Add the source files to be compiled
-add_library(${projectName} SHARED ${objFiles})
+add_library(${PROJECT_NAME} SHARED ${objFiles})
 
 set(CMAKE_C_FLAGS "${CommonFlags} -Werror=implicit-function-declaration")
 set(CMAKE_CXX_FLAGS "${CommonFlags}")
 
 # message(${CMAKE_C_FLAGS})
-#add_library(${projectName} STATIC ${sourceFiles})
+#add_library(${PROJECT_NAME} STATIC ${sourceFiles})
 
 if(WIN32)
     list(APPEND libraries
@@ -58,21 +61,32 @@ if(WIN32)
 endif()
 
 # Set compilation options
-# target_compile_options(${projectName} PRIVATE ${compileOptions})
+# target_compile_options(${PROJECT_NAME} PRIVATE ${compileOptions})
 
 #set link libraries
-target_link_libraries(${projectName} PRIVATE ${libraries})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${libraries})
 
 # Get the current directory name
 get_filename_component(driverName ${PROJECT_SOURCE_DIR} NAME)
 
 # Set the output Shared Object file name
-set_target_properties(${projectName} PROPERTIES
+set_target_properties(
+    ${PROJECT_NAME} PROPERTIES
+    PUBLIC_HEADER "${objHeaders}"
     PREFIX ""
     OUTPUT_NAME "${driverName}"
 )
 
-install(TARGETS ${projectName} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+set(installPath ${PROJECT_SOURCE_DIR}/lib)
+
+install(
+    TARGETS ${PROJECT_NAME}
+    RUNTIME DESTINATION ${installPath}
+    LIBRARY DESTINATION ${installPath}
+    
+    # ARCHIVE DESTINATION ${installPath}
+    PUBLIC_HEADER DESTINATION ${installPath}/include
+)
 
 # Determine the installation path in the operating system environment
 if(WIN32)
@@ -96,7 +110,7 @@ file(GLOB geFile ${PROJECT_SOURCE_DIR}/lib/${driverName}.ge)
 
 # Install the library file and ge files to the target paths
 foreach(targetPath ${targetPaths})
-    install(FILES "$<TARGET_FILE:${projectName}>" DESTINATION ${targetPath})
+    install(FILES "$<TARGET_FILE:${PROJECT_NAME}>" DESTINATION ${targetPath})
     install(FILES ${geFile} DESTINATION ${targetPath})
 endforeach()
 
