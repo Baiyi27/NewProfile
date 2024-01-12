@@ -173,10 +173,11 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 
-export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi/bin
-export PATH=$PATH:/usr/local/arm/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf/bin
+#export PATH=$PATH:/usr/local/arm/gcc-4.9.4-x86_64_arm-linux-gnueabi/bin
+export PATH=$PATH:/usr/local/arm/gcc-5.5.0-x86_64_arm-linux-gnueabi/bin
+export PATH=$PATH:/usr/local/arm/gcc-5.5.0-x86_64_arm-linux-gnueabihf/bin
 
-export CLANG_FORMAT_STYLE=$HOME
+export CLANG_FORMAT_STYLE="$HOME"
 
 #export ZSH="$HOME/.oh-my-zsh"
 

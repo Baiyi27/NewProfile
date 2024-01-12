@@ -116,8 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnueabi/bin
-export PATH=$PATH:/usr/local/arm/gcc-linaro-5.5.0-2017.10-x86_64_arm-linux-gnueabihf/bin
+#export PATH=$PATH:/usr/local/arm/gcc-4.9.4-x86_64_arm-linux-gnueabi/bin
+export PATH=$PATH:/usr/local/arm/gcc-5.5.0-x86_64_arm-linux-gnueabi/bin
+export PATH=$PATH:/usr/local/arm/gcc-5.5.0-x86_64_arm-linux-gnueabihf/bin
 
 alias clc='clear'
 alias cls='printf "\033c"'
