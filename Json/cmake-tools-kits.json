@@ -1,0 +1,88 @@
+[
+  {
+    "name": "Clang 17.0.6 x86_64-pc-windows-msvc",
+    "compilers": {
+      "C": "D:\\LLVM\\bin\\clang.exe",
+      "CXX": "D:\\LLVM\\bin\\clang++.exe"
+    },
+    "isTrusted": true
+  },
+  {
+    "name": "Clang-cl 17.0.6 x86_64-pc-windows-msvc",
+    "compilers": {
+      "C": "D:\\LLVM\\bin\\clang-cl.exe",
+      "CXX": "D:\\LLVM\\bin\\clang-cl.exe"
+    },
+    "isTrusted": true
+  },
+  {
+    "name": "DT-i686-4.5.2-win32-dwarf",
+    "compilers": {
+      "C": "D:/Kinco/Kinco_debug/MinGW/bin/gcc.exe"
+    },
+    "isTrusted": true
+  },
+  {
+    "name": "DTP-i686_-w64-mingw32-posix",
+    "compilers": {
+      "C": "D:/MinGWTools/TDM_x32-1/bin/gcc.exe",
+      "CXX": "D:/MinGWTools/TDM_x32-1/bin/g++.exe"
+    },
+    "isTrusted": true
+  },
+  {
+    "name": "GCC 13.2.0 x86_64-w64-mingw32",
+    "compilers": {
+      "C": "D:\\mingw64\\bin\\gcc.exe",
+      "CXX": "D:\\mingw64\\bin\\g++.exe"
+    },
+    "isTrusted": true,
+    "environmentVariables": {
+      "CMT_MINGW_PATH": "D:\\mingw64\\bin"
+    },
+    "preferredGenerator": {
+      "name": "MinGW Makefiles"
+    }
+  },
+  {
+    "name": "MinGW Make 13.1.0 x86_64-w64-mingw32",
+    "compilers": {
+      "C": "D:/mingw64/bin/gcc.exe",
+      "CXX": "D:/mingw64/bin/g++.exe"
+    },
+    "isTrusted": true,
+    "environmentVariables": {
+      "CMT_MINGW_PATH": "D:/mingw64/bin"
+    },
+    "preferredGenerator": {
+      "name": "MinGW Makefiles"
+    }
+  },
+  {
+    "name": "i686-5.4.0-posix-dwarf",
+    "compilers": {
+      "C": "D:/MinGWTools/i686-5.4.0-posix-dwarf/bin/gcc.exe",
+      "CXX": "D:/MinGWTools/i686-5.4.0-posix-dwarf/bin/g++.exe"
+    },
+    "isTrusted": true
+  },
+  {
+    "name": "i686-5.4.0-win32-dwarf",
+    "compilers": {
+      "C": "D:/MinGWTools/i686-5.4.0-win32-dwarf/bin/gcc.exe",
+      "CXX": "D:/MinGWTools/i686-5.4.0-win32-dwarf/bin/g++.exe"
+    },
+    "isTrusted": true
+  },
+  {
+    "name": "x86_64-13.1.0-posix-seh",
+    "compilers": {
+      "C": "D:/mingw64/bin/gcc.exe",
+      "CXX": "D:/mingw64/bin/g++.exe"
+    },
+    "isTrusted": true,
+    "environmentVariables": {
+      "CMT_MINGW_PATH": "D:/mingw64/bin"
+    }
+  }
+]
