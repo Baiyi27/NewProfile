@@ -3,6 +3,10 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [
         {
+            "command": "unbound",
+            "keys": "ctrl+shift+f"
+        },
+        {
             "command": {
                 "action": "copy",
                 "singleLine": false
@@ -14,19 +18,18 @@
             "keys": "ctrl+v"
         },
         {
+            "command": "find",
+            "keys": "ctrl+f"
+        },
+        {
             "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
         }
     ],
-    "alwaysOnTop": false,
     "centerOnLaunch": true,
     "copyFormatting": "all",
     "copyOnSelect": true,
@@ -35,8 +38,8 @@
     "experimental.rendering.software": true,
     "firstWindowPreference": "defaultProfile",
     "focusFollowMouse": true,
-    "initialCols": 120,
-    "initialRows": 30,
+    "initialCols": 127,
+    "initialRows": 39,
     "minimizeToNotificationArea": false,
     "newTabMenu": [
         {
@@ -48,14 +51,14 @@
         "defaults": {
             "adjustIndistinguishableColors": "always",
             "altGrAliasing": false,
-            "antialiasingMode": "cleartype",
             "backgroundImage": "D:\\My_doc\\wallpaper\\sunshine-girl-c9.jpg",
-            "backgroundImageOpacity": 0.44,
+            "backgroundImageOpacity": 0.45,
             "bellStyle": "none",
             "closeOnExit": "automatic",
             "colorScheme": "One Half Dark",
-            "cursorShape": "bar",
+            "cursorShape": "filledBox",
             "elevate": true,
+            "experimental.retroTerminalEffect": false,
             "font": {
                 "face": "JetBrainsMono Nerd Font Mono",
                 "size": 13.0,
@@ -79,35 +82,35 @@
                 "elevate": true,
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell"
+                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+                "name": "Windows PowerShell",
+                "startingDirectory": "%USERPROFILE%"
             },
             {
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "elevate": false,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/{0caa0dad-35be-5f56-a8ff-afceeeaa6101}.png",
                 "name": "CMD"
             },
             {
-                "cursorShape": "bar",
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/pwsh-preview.png",
                 "intenseTextStyle": "none",
                 "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
+                "source": "Windows.Terminal.PowershellCore",
+                "startingDirectory": "C:\\Users\\admin\\Desktop"
             },
             {
-                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                // "commandline": "D:\\Tools\\MSYS2\\start_mingw64.cmd",
+                "commandline": "%GIT_LOCAL_REPO%/NewProfile/Json/start_mingw64.cmd",
+                "guid": "{bc37f772-de6b-4d9f-a58c-a60cda81e877}",
                 "hidden": false,
-                "name": "Git Bash",
-                "source": "Git"
-            },
-            {
-                "commandline": "D:\\App Program\\msys2\\msys2.exe",
-                "guid": "{dfa7ba78-7710-4390-ace2-a5fd0726a5b1}",
-                "hidden": false,
-                "name": "MSYS2",
-                "startingDirectory": "D:\\App Program\\msys2\\home\\admin"
+                "icon": "D:\\Tools\\MSYS2\\mingw64.ico",
+                "name": "MYSYS2",
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
@@ -324,9 +327,9 @@
     "showTerminalTitleInTitlebar": true,
     "snapToGridOnResize": false,
     "startOnUserLogin": false,
-    "tabWidthMode": "titleLength",
+    "tabWidthMode": "equal",
     "theme": "system",
     "themes": [],
     "useAcrylicInTabRow": true,
-    "windowingBehavior": "useNew"
+    "windowingBehavior": "useExisting"
 }
