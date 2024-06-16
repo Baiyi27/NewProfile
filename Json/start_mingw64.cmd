@@ -1,2 +1,2 @@
 @echo off
-call %MSYS2_HOME%/msys2_shell.cmd -use-full-path -defterm -here -no-start -mingw64
+call %MSYS2_PATH%/msys2_shell.cmd -use-full-path -defterm -here -no-start -mingw64
