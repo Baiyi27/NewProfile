@@ -36,7 +36,7 @@ lone this repository into $ZSH_CUSTOM/plugins (by default ~/.oh-my-zsh/custom/pl
 将此存储库克隆到$ZSH_CUSTOM/plugins （默认为 ~/.oh-my-zsh/custom/plugins ）
 
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
@@ -52,7 +52,7 @@ Clone this repository in oh-my-zsh's plugins directory:
 在 oh-my-zsh 的插件目录中克隆这个存储库：
 
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 Activate the plugin in ~/.zshrc:
