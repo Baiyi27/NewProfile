@@ -4,10 +4,13 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [user]
-	name = SwanBaiLei
+	name = Swan BaiLei27
 	email = 65945846+Baiyi27@users.noreply.github.com
 [core]
 	editor =Code -w
 	autocrlf = false
+	pager = cat
 [safe]
 	directory = *
+[alias]
+    lg = log --color --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%Cred%h %Cgreen%cd %C(bold cyan)%C(auto)%d %Creset%s'
