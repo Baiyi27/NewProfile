@@ -51,6 +51,7 @@
         "defaults": {
             "adjustIndistinguishableColors": "always",
             "altGrAliasing": false,
+            "antialiasingMode": "cleartype",
             "backgroundImage": "D:\\My_doc\\wallpaper\\sunshine-girl-c9.jpg",
             "backgroundImageOpacity": 0.45,
             "bellStyle": "none",
@@ -173,7 +174,7 @@
             "brightRed": "#E06C75",
             "brightWhite": "#DCDFE4",
             "brightYellow": "#E5C07B",
-            "cursorColor": "#6ACEFF",
+            "cursorColor": "#B8E7FF",
             "cyan": "#56B6C2",
             "foreground": "#DCDFE4",
             "green": "#98C379",
