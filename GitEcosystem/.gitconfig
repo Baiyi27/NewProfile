@@ -1,0 +1,27 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[user]
+	name = Swan BaiLei27
+	email = 65945846+Baiyi27@users.noreply.github.com
+[core]
+	editor =Code -w
+	autocrlf = false
+	pager = cat
+	fscache = true
+	symlinks = false
+[safe]
+	directory = *
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[http]
+	# porxy = http://127.0.0.1:7890
+	sslBackend = schannel
+[credential]
+	helper = manager
+[alias]
+    lg = log --color --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%Cred%h %Cgreen%cd %C(bold cyan)%C(auto)%d %Creset%so'
