@@ -52,7 +52,7 @@
             "adjustIndistinguishableColors": "always",
             "altGrAliasing": false,
             "antialiasingMode": "cleartype",
-            "backgroundImage": "D:\\My_doc\\wallpaper\\sunshine-girl-c9.jpg",
+            "backgroundImage": "D:/Mydocs/wallpaper/sunshine-girl-c9.jpg",
             "backgroundImageOpacity": 0.45,
             "bellStyle": "none",
             "closeOnExit": "automatic",
@@ -79,7 +79,7 @@
         },
         "list": [
             {
-                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "commandline": "%SystemRoot%/System32/WindowsPowerShell/v1.0/powershell.exe",
                 "elevate": true,
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
@@ -88,7 +88,7 @@
                 "startingDirectory": "%USERPROFILE%"
             },
             {
-                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "commandline": "%SystemRoot%/System32/cmd.exe",
                 "elevate": false,
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
@@ -102,15 +102,15 @@
                 "intenseTextStyle": "none",
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore",
-                "startingDirectory": "C:\\Users\\admin\\Desktop"
+                "startingDirectory": "C:/Users/admin/Desktop"
             },
             {
-                // "commandline": "D:\\Tools\\MSYS2\\start_mingw64.cmd",
-                "commandline": "%GIT_LOCAL_REPO%/NewProfile/Json/start_mingw64.cmd",
+                // "commandline": "D:/Tools/MSYS2/start_mingw64.cmd",
+                "commandline": "%GIT_LOCAL_REPO%/NewProfile/MSYS2/start_mingw64.cmd",
                 "guid": "{bc37f772-de6b-4d9f-a58c-a60cda81e877}",
                 "hidden": false,
-                "icon": "D:\\Tools\\MSYS2\\mingw64.ico",
-                "name": "MYSYS2",
+                "icon": "%MSYS2_PATH%/mingw64.ico",
+                "name": "MSYS2",
                 "startingDirectory": "%USERPROFILE%"
             }
         ]
