@@ -1,51 +1,36 @@
 [
   {
+    "name": "GCC 14.1.0 x86_64-w64-mingw32 (mingw64)",
+    "compilers": {
+      "C": "D:/Tools/MSYS2/mingw64/bin/gcc.exe",
+      "CXX": "D:/Tools/MSYS2/mingw64/bin/g++.exe"
+    },
+    "isTrusted": true,
+    "environmentVariables": {
+      "CMT_MINGW_PATH": "D:/Tools/MSYS2/mingw64/bin",
+      "MSYSTEM": "MINGW64",
+      "MSYSTEM_PREFIX": "/mingw64",
+      "PATH": "D:/Tools/MSYS2/mingw64/bin;D:/Tools/MSYS2/usr/bin;${env:PATH}"
+    }
+  },
+  {
     "name": "Clang 17.0.6 x86_64-pc-windows-msvc",
     "compilers": {
-      "C": "D:\\LLVM\\bin\\clang.exe",
-      "CXX": "D:\\LLVM\\bin\\clang++.exe"
+      "C": "D:/LLVM/bin/clang.exe",
+      "CXX": "D:/LLVM/bin/clang++.exe"
     },
     "isTrusted": true
   },
   {
     "name": "Clang-cl 17.0.6 x86_64-pc-windows-msvc",
     "compilers": {
-      "C": "D:\\LLVM\\bin\\clang-cl.exe",
-      "CXX": "D:\\LLVM\\bin\\clang-cl.exe"
-    },
-    "isTrusted": true
-  },
-  {
-    "name": "DT-i686-4.5.2-win32-dwarf",
-    "compilers": {
-      "C": "D:/Kinco/Kinco_debug/MinGW/bin/gcc.exe"
-    },
-    "isTrusted": true
-  },
-  {
-    "name": "DTP-i686_-w64-mingw32-posix",
-    "compilers": {
-      "C": "D:/MinGWTools/TDM_x32-1/bin/gcc.exe",
-      "CXX": "D:/MinGWTools/TDM_x32-1/bin/g++.exe"
+      "C": "D:/LLVM/bin/clang-cl.exe",
+      "CXX": "D:/LLVM/bin/clang-cl.exe"
     },
     "isTrusted": true
   },
   {
     "name": "GCC 13.2.0 x86_64-w64-mingw32",
-    "compilers": {
-      "C": "D:\\mingw64\\bin\\gcc.exe",
-      "CXX": "D:\\mingw64\\bin\\g++.exe"
-    },
-    "isTrusted": true,
-    "environmentVariables": {
-      "CMT_MINGW_PATH": "D:\\mingw64\\bin"
-    },
-    "preferredGenerator": {
-      "name": "MinGW Makefiles"
-    }
-  },
-  {
-    "name": "MinGW Make 13.1.0 x86_64-w64-mingw32",
     "compilers": {
       "C": "D:/mingw64/bin/gcc.exe",
       "CXX": "D:/mingw64/bin/g++.exe"
