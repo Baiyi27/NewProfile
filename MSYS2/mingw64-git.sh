@@ -16,6 +16,6 @@ pacman -Syyuu --noconfirm
 
 pacman -Suu --noconfirm
 
-pacman -S mingw-w64-x86_64-{git,git-doc-html,git-credential-manager} --noconfirm
+pacman -S mingw-w64-x86_64-{git,git-lfs,git-doc-html,git-credential-manager} --noconfirm #git tools
 
-pacman -S mingw64/mingw-w64-x86_64-{curl,gnutls,openssl}
+pacman -S mingw-w64-x86_64-{curl,gnutls,openssl} #Optional
