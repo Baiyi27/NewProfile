@@ -21,7 +21,8 @@
             "cacheVariables": {
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
                 "CMAKE_COLOR_DIAGNOSTICS": "ON",
-                "CMAKE_PREFIX_PATH": "$env{VCPKG_PATH}/installed/x64-mingw-dynamic"
+                "CMAKE_PREFIX_PATH": "$env{VCPKG_PATH}/installed/x64-mingw-dynamic",
+                "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic"
             }
         },
         {
