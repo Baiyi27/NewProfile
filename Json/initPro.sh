@@ -35,6 +35,7 @@ dirs=(
   "$projectName/src//include/module"
   "$projectName/apps"
   "$projectName/tests"
+  "$projectName/logs"
   "$projectName/docs"
   "$projectName/3rdparty"
   "$projectName/scripts"
