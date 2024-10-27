@@ -1,0 +1,20 @@
+# CompileFlags:
+#   Add: [-I${workspaceFolder}/**, --target=x86_64-w64-windows-gnu]
+
+InlayHints:
+  BlockEnd: Yes
+  Designators: No
+  Enabled: Yes
+  ParameterNames: No
+  DeducedTypes: Yes
+  TypeNameLimit: 24
+
+If:
+  PathMatch: .*\.(cc|cpp|cxx|hh|hpp|hxx)
+CompileFlags:
+    Add: [-xc++, -std=gnu++23]
+---
+If:
+  PathMatch: .*\.(c|h)
+CompileFlags:
+    Add: [-xc, -std=gnu23]
