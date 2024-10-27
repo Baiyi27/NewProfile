@@ -15,4 +15,5 @@ New-Alias tl tree
 New-Alias grep Select-String
 New-Alias make mingw32-make
 New-Alias vcpkgd vcpkg_no_telemetry
+New-Alias vcp vcpkg
 New-Alias py Python
