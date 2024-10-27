@@ -7,6 +7,10 @@
 ...
 
 # # type:
+#       (modify)
+#          <mdfy> {modify files or a few change}
+#       (adjust)
+#          <adj> {adjust files folder}
 #     (initialization):
 #         <init> {Project initialization}
 #     (features):

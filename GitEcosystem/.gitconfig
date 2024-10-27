@@ -24,6 +24,7 @@
 [credential]
 	helper = manager
 [commit] 
-    template = .gitmessage
+	template = .gitmessage
 [alias]
-    lg = log --reverse --color --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%Cred%h %Cgreen%cd %C(bold cyan)%C(auto)%d %Creset%s'
+	lg = log --reverse --color --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%Cred%h %Cgreen%cd %C(bold cyan)%C(auto)%d %Creset%s'
+	root = rev-parse --show-toplevel
