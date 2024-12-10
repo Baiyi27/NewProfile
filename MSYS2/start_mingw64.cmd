@@ -9,4 +9,4 @@ if not defined MSYS2_PATH (
 )
 
 @REM Call msys2_shell.cmd with the appropriate arguments
-call "%MSYS2_PATH%\msys2_shell.cmd" -use-full-path -defterm -here -no-start -mingw64
+call "%MSYS2_PATH%\msys2_shell.cmd" -full-path -defterm -here -no-start -mingw64 -shell zsh

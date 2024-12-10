@@ -78,13 +78,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( z
-          git
-          # extract
-          zsh-autosuggestions 
-        #  zsh-syntax-highlighting
-
-
+plugins=(git
+	 # extract
+         zsh-autosuggestions 
+         # zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -100,15 +97,22 @@ export LANG=en_US.UTF-8
 # This is needed to resolve host dependencies. For convenience, you can use environment variables to set both triplets:
 export VCPKG_DEFAULT_TRIPLET=x64-mingw-dynamic
 export VCPKG_DEFAULT_HOST_TRIPLET=x64-mingw-dynamic
+# python pipx Virtual environment path
+export PIPX_HOME="$HOME/pipx"
+export PIPX_BIN_DIR="$HOME/.local/bin"
+# Qemu environment dependencies
+export XDG_DATA_HOME="mingw64/share"
+export XDG_DATA_DIRS="mingw64/share"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -132,6 +136,8 @@ alias rm='rm -ri'
 alias zh='zhcon --utf8'
 alias pc='pacman'
 alias make='mingw32-make'
+alias vcp='vcpkg'
+alias py='python'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
